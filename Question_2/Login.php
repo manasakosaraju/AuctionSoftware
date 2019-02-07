@@ -5,6 +5,8 @@
    		$con = new mysqli("localhost", "root", "root", "Chad", 3307) or die(mysqli_error());  
 		$username = $_POST['username'];
 		$password = $_POST['password'];
+		$_SESSION['username'] = $username;
+		$_SESSION['password'] = $password;
 		$md5_password=md5($password.row_salt);
 		$result=mysqli_query($con,"select username,password from ilance_users where username='$username' and password='$md5_password '");
 		$count=mysqli_num_rows($result);
@@ -19,7 +21,7 @@
 		else{
 			
 			echo "<h1>
-					Welcome
+					Welcome $username
 					</h1>";
 		
 		}
