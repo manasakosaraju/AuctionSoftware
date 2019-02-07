@@ -1,0 +1,29 @@
+<?php
+	if(isset($_POST['submit']))
+	{
+		session_start();
+   		$con = new mysqli("localhost", "root", "root", "Chad", 3307) or die(mysqli_error());  
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$md5_password=md5($password.row_salt);
+		$result=mysqli_query($con,"select username,password from ilance_users where username='$username' and password='$md5_password '");
+		$count=mysqli_num_rows($result);
+		if($count == 0){
+			echo "
+				<script> 
+					alert('Incorrect username/ password')
+				</script>
+
+			";
+		}
+		else{
+			
+			echo "<h1>
+					Welcome
+					</h1>";
+		
+		}
+
+		session_destroy();
+}
+?>

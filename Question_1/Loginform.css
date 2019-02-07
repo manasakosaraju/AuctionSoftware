@@ -1,0 +1,21 @@
+.username, .password{
+	border-radius: 5px;
+	margin-top: 2px;
+}
+
+p{
+	font-size: 1.5em;
+	color: cornflowerblue;
+	margin-bottom: 8px;
+}
+
+.button_submit{
+	cursor: pointer;
+	color: white;
+	margin-top: 1em;
+	background-color: #4CAF50;
+}
+
+.htmlForm{
+	text-align: center;
+}
