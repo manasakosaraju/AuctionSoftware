@@ -1,0 +1,28 @@
+table, td, tr, th{
+	border: 1px solid black;
+}
+
+table{
+	border-collapse: collapse;
+	width: 40%;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+.clickable{
+	cursor: pointer;
+	margin-left: 8px;
+	color: blue;
+}
+
+.sort-label{
+	font-size: 1em;
+}
+
+.header-class{
+	display: table-row!important;
+}
+
+.hide{
+	display: none;
+}
