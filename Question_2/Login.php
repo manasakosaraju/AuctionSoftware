@@ -8,7 +8,8 @@
 		$_SESSION['username'] = $username;
 		$_SESSION['password'] = $password;
 		$md5_password=md5($password.row_salt);
-		$result=mysqli_query($con,"select username,password from ilance_users where username='$username' and password='$md5_password '");
+		$query = "select username, password from ilance_users where username= '$username' and password = '$md5_password' ";
+		$result=mysqli_query($con, $query);
 		$count=mysqli_num_rows($result);
 		if($count == 0){
 			echo "
